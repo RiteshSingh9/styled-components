@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // adapting based on props  is one way to do that but has multiple checks and branching and hard to maintain
 
@@ -36,4 +36,19 @@ export const SubmitButton = styled(StyledButton).attrs({
         box-shadow: 0 5px #666;
         transform: translateY(4px);
     }
+`;
+
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`;
+
+export const AnimateLogo = styled.img`
+    height: 40vmin;
+    pointer-events: none;
+    animation: ${rotate} linear 10s infinite;
 `;
