@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import StyledButton from './components/Buttons/Button';
+import StyledButton, { FancyButton } from './components/Buttons/Button';
 
 
 function App() {
@@ -12,6 +12,15 @@ function App() {
 				<br />
 			</div>
 			<StyledButton variant='outline'>Styled  Button</StyledButton>
+			<div>
+				<br />
+			</div>
+			<FancyButton> Fancy Button</FancyButton>
+			<div>
+				<br />
+			</div>
+			{/* polymorphic props */}
+			<FancyButton as='a'> Fancy Button as anchor tag</FancyButton>
 		</div>
 	);
 }
