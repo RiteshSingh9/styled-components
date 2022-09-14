@@ -12,10 +12,16 @@ export const StyledButton = styled.button`
     display: inline - block;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.5s ease - out;
+    transition: all 0.5s ease-out;
+
+    &:hover {
+	background-color: ${(props) => props.variant !== 'outline' ? '#eee' : '#1FAA59'};
+	color:  ${(props) => props.variant !== 'outline' ? '#1FAA59' : '#eee'};
+    }
 `;
 
 export const FancyButton = styled(StyledButton)`
     background-image: linear-gradient(to right, #66AD47 0%, #FF6666 100%);
     border: none;
 `;
+
