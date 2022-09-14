@@ -1,36 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
 import './styles.css';
-import StyledButton, { FancyButton, SubmitButton } from './components/Buttons/Button';;
+import { ThemeProvider } from 'styled-components';
+import StyledButton, { FancyButton, SubmitButton, AnimateLogo, DarkButton } from './components/Buttons/Button';;
+
+
+const theme = {
+	dark: {
+		primary: '#222',
+		text: '#eee'
+	},
+	light: {
+		primary: '#eee',
+		text: '#111',
+	}
+}
 
 
 function App() {
 	return (
-		<div className="App">
-			{/* <img src={logo} className="App-logo" alt="logo" /> */}
-			<animateLogo src={logo} />
-			{/* <button>Button</button> */}
-			<br />
-			<StyledButton>Styled  Button</StyledButton>
-			<div>
+		<ThemeProvider theme={theme}>
+			<div className="App">
+				{/* <img src={logo} className="App-logo" alt="logo" /> */}
+				<AnimateLogo src={logo} />
+				{/* <button>Button</button> */}
 				<br />
-			</div>
-			<StyledButton variant='outline'>Styled  Button</StyledButton>
-			<div>
-				<br />
-			</div>
-			<FancyButton> Fancy Button</FancyButton>
-			<div>
-				<br />
-			</div>
-			{/* polymorphic props */}
-			<FancyButton as='a'> Fancy Button as anchor tag</FancyButton>
+				<StyledButton>Styled  Button</StyledButton>
+				<div>
+					<br />
+				</div>
+				<StyledButton variant='outline'>Styled  Button</StyledButton>
+				<div>
+					<br />
+				</div>
+				<FancyButton> Fancy Button</FancyButton>
+				<div>
+					<br />
+				</div>
+				{/* polymorphic props */}
+				<FancyButton as='a'> Fancy Button as anchor tag</FancyButton>
 
-			<div>
-				<br />
+				<div>
+					<br />
+				</div>
+				<SubmitButton>Submit Button</SubmitButton>
+				<div>
+					<br />
+				</div>
+				<DarkButton>Dark Button</DarkButton>
 			</div>
-			<SubmitButton>Submit Button</SubmitButton>
-		</div>
+		</ThemeProvider>
 	);
 }
 
