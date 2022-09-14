@@ -1,7 +1,8 @@
 import {
 	StyledButton,
-	FancyButton
+	FancyButton,
+	SubmitButton
 } from "./Button.styles";
 
-export { FancyButton };
+export { FancyButton, SubmitButton };
 export default StyledButton;

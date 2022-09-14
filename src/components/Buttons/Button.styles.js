@@ -25,3 +25,15 @@ export const FancyButton = styled(StyledButton)`
     border: none;
 `;
 
+// you can also pass a function to .attrs();
+export const SubmitButton = styled(StyledButton).attrs({
+    type: 'submit',
+})`
+    box-shadow: 0 9px #999;
+
+    &:hover {
+        background-color: ${(props) => props.variant !== 'outline' ? '#fff' : '#4caf50'};
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+`;
