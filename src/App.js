@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import './styles.css';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import StyledButton, { FancyButton, SubmitButton, AnimateLogo, DarkButton } from './components/Buttons/Button';;
 
 
@@ -13,13 +13,22 @@ const theme = {
 	light: {
 		primary: '#eee',
 		text: '#111',
-	}
+	},
+	fontFamily: "'Courier New', Courier, monospace",
 }
 
+// monstly used for resest css
+
+const GlobalStyle = createGlobalStyle`
+	button {
+		font-family: ${(props) => props.theme.fontFamily};
+	}
+`;
 
 function App() {
 	return (
 		<ThemeProvider theme={theme}>
+			<GlobalStyle />
 			<div className="App">
 				{/* <img src={logo} className="App-logo" alt="logo" /> */}
 				<AnimateLogo src={logo} />
